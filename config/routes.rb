@@ -1,4 +1,19 @@
 Regi::Application.routes.draw do
+    get "users/new"
+
+    root to: 'static_pages#home'
+
+    match '/signup', to: 'users#new'
+
+    match '/about',    to: 'static_pages#about'
+    match '/contact_us',   to: 'static_pages#contact_us'
+
+
+
+
+
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
