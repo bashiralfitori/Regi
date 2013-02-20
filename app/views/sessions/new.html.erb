@@ -1,0 +1,20 @@
+<% provide(:title, "Sign in") %>
+<h1>تسجيل الدخول</h1>
+
+<div class="row">
+	<div class="span6 offset3">
+		<%= form_for(:session, url: sessions_path) do |f| %>
+
+			<%= f.label :email, "البريد الإلكتروني" %>
+			<%= f.text_field :email %>
+
+			<%= f.label :password, "كلمة الدخول" %>
+			<%= f.password_field :password %>
+
+			<%= f.submit "تسجيل الدخول", class: "btn btn-large btn-primary" %>
+
+		<% end %>
+
+	<p>لم تسجل من قبل ؟ <%= link_to "سجل الآن", signup_path %></p>
+	</div>
+</div> 

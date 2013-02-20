@@ -1,13 +1,17 @@
 Regi::Application.routes.draw do
     resources :users
+    resources :sessions, only: [:new, :create, :destroy]
     get "users/new"
 
     root to: 'static_pages#home'
 
     match '/signup', to: 'users#new'
 
+
     match '/about',    to: 'static_pages#about'
     match '/contact_us',   to: 'static_pages#contact_us'
+    match '/signin',      to: 'sessions#new'
+    match '/signout', :to => 'sessions#destroy'
 
 
 
